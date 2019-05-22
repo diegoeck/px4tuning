@@ -1,11 +1,13 @@
-Metadata-Version: 1.0
+Metadata-Version: 1.1
 Name: px4tuning
 Version: 0.1
 Summary: Auto tuning for PX4
-Home-page: UNKNOWN
+Home-page: https://github.com/diegoeck/px4tuning
 Author: Diego Eckhard
-Author-email: diego@eckhard.com.br`
+Author-email: diego@eckhard.com.br
 License: MIT
-Description-Content-Type: UNKNOWN
 Description: UNKNOWN
 Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent

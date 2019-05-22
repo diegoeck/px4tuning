@@ -50,7 +50,7 @@ def vrft_pid(u, y, ad, bd, modo,P):
         b0=np.array([1, -b])
         e_1 = signal.lfilter(b0, a0, ef)
 
-    M=2500
+    M=1250
     uf=uf[M:N-M]    
     e_1=e_1[M:N-M]    
     e_2=e_2[M:N-M]    
@@ -108,7 +108,7 @@ def vrft_pid(u, y, ad, bd, modo,P):
     return rho
 
 
-def vrft_pid_mf(u, y, ad, bd, modo,P,c=0.99):
+def vrft_pid_mf(u, y, ad, bd, modo,P,ti,tf,c=0.99):
 
     N = np.size(y)
 
@@ -147,11 +147,12 @@ def vrft_pid_mf(u, y, ad, bd, modo,P,c=0.99):
         b0=np.array([1, -b])
         e_1 = signal.lfilter(b0, a0, ef)
 
-    M=2500
-    uf=uf[M:N-M]    
-    e_1=e_1[M:N-M]    
-    e_2=e_2[M:N-M]    
-    e_3=e_3[M:N-M]    
+    Mi=250*ti
+    Mf=250*tf
+    uf=uf[Mi:N-Mf]    
+    e_1=e_1[Mi:N-Mf]    
+    e_2=e_2[Mi:N-Mf]    
+    e_3=e_3[Mi:N-Mf]    
 
     if modo=='pid':
         phi = np.array([e_1,e_2,e_3])

@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Sep 14 18:24:30 2018
+
+@author: diego
+"""
+list_of_files=glob.glob('*.ulg')
+arq = max(list_of_files, key=os.path.getctime)
+print("Arquivo", arq)
+    
+    
+D=importa.open_file(arq)
+
+
+b0=np.array([1, -1])
+a0=np.array([1, 0])
+    
+
+t1f = signal.lfilter(b0, a0, D.t1)
+
+t1f=(t1f[2:-1])/1000000
+
+p1=plt.figure(1)
+plt.hist(t1f, bins=500)
+plt.ylabel('t1f')
+plt.legend()
+
+
