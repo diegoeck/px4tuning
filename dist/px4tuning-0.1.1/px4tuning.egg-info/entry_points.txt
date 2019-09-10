@@ -1,0 +1,3 @@
+[console_scripts]
+px4att = px4tuning.px4att:main
+
